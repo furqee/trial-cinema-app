@@ -6,66 +6,66 @@
             </div>
             <div class="card-body">
                 <ValidationObserver v-slot="{ invalid }">
-                <form @submit.prevent="onSubmit">
-                    <div class="form-group">
-                        <label for="email">Name</label>
-                        <validation-provider rules="required|min:5" v-slot="{ errors }">
-                            <input
-                                type="text"
-                                class="form-control"
-                                :class="{ 'is-invalid': errors.name }"
-                                id="name"
-                                v-model="user.name"
-                                placeholder="Enter name"
-                            />
-                            <span>{{ errors[0] }}</span>
-                        </validation-provider>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email address</label>
-                        <validation-provider rules="required|email" v-slot="{ errors }">
-                            <input
-                                type="email"
-                                class="form-control"
-                                :class="{ 'is-invalid': errors.email }"
-                                id="email"
-                                v-model="user.email"
-                                placeholder="Enter email"
-                            />
-                            <span>{{ errors[0] }}</span>
-                        </validation-provider>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <validation-provider rules="required|confirmed:confirmation|min:5" v-slot="{ errors }">
-                            <input
-                                type="password"
-                                class="form-control"
-                                :class="{ 'is-invalid': errors.password }"
-                                id="password"
-                                v-model="user.password"
-                                placeholder="Password"
-                            />
-                            <span>{{ errors[0] }}</span>
-                        </validation-provider>
-                    </div>
-                    <div class="form-group">
-                        <label for="c_password">Confirm password</label>
-                        <validation-provider rules="required" v-slot="{ errors }" vid="confirmation">
-                            <input
-                                type="password"
-                                class="form-control"
-                                id="c_password"
-                                v-model="user.c_password"
-                                placeholder="Confirm password"
-                            />
-                            <span>{{ errors[0] }}</span>
-                        </validation-provider>
-                    </div>
-                    <button type="submit" :disabled="invalid" class="btn btn-primary">
-                        Register
-                    </button>
-                </form>
+                    <form @submit.prevent="onSubmit">
+                        <div class="form-group">
+                            <label for="email">Name</label>
+                            <validation-provider rules="required|min:5" v-slot="{ errors }">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    :class="{ 'is-invalid': errors.name }"
+                                    id="name"
+                                    v-model="user.name"
+                                    placeholder="Enter name"
+                                />
+                                <span class="text-danger">{{ errors[0] }}</span>
+                            </validation-provider>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <validation-provider rules="required|email" v-slot="{ errors }">
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    :class="{ 'is-invalid': errors.email }"
+                                    id="email"
+                                    v-model="user.email"
+                                    placeholder="Enter email"
+                                />
+                                <span class="text-danger">{{ errors[0] }}</span>
+                            </validation-provider>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <validation-provider rules="required|confirmed:confirmation|min:5" v-slot="{ errors }">
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    :class="{ 'is-invalid': errors.password }"
+                                    id="password"
+                                    v-model="user.password"
+                                    placeholder="Password"
+                                />
+                                <span class="text-danger">{{ errors[0] }}</span>
+                            </validation-provider>
+                        </div>
+                        <div class="form-group">
+                            <label for="c_password">Confirm password</label>
+                            <validation-provider rules="required" v-slot="{ errors }" vid="confirmation">
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="c_password"
+                                    v-model="user.c_password"
+                                    placeholder="Confirm password"
+                                />
+                                <span class="text-danger">{{ errors[0] }}</span>
+                            </validation-provider>
+                        </div>
+                        <button type="submit" :disabled="invalid" class="btn btn-primary">
+                            Register
+                        </button>
+                    </form>
                 </ValidationObserver>
             </div>
         </div>

@@ -10,29 +10,29 @@
                         <div class="form-group">
                             <label for="email">Email address</label>
                             <validation-provider rules="required|email" v-slot="{ errors }">
-                            <input
-                                type="email"
-                                class="form-control"
-                                :class="{ 'is-invalid': errors.email }"
-                                id="email"
-                                v-model="details.email"
-                                placeholder="Enter email"
-                            />
-                                <span>{{ errors[0] }}</span>
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    :class="{ 'is-invalid': errors.email }"
+                                    id="email"
+                                    v-model="details.email"
+                                    placeholder="Enter email"
+                                />
+                                <span class="text-danger">{{ errors[0] }}</span>
                             </validation-provider>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
                             <validation-provider rules="required|min:5" v-slot="{ errors }">
-                            <input
-                                type="password"
-                                class="form-control"
-                                :class="{ 'is-invalid': errors.password }"
-                                id="password"
-                                v-model="details.password"
-                                placeholder="Password"
-                            />
-                                <span>{{ errors[0] }}</span>
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    :class="{ 'is-invalid': errors.password }"
+                                    id="password"
+                                    v-model="details.password"
+                                    placeholder="Password"
+                                />
+                                <span class="text-danger">{{ errors[0] }}</span>
                             </validation-provider>
                         </div>
                         <button type="submit" :disabled="invalid" class="btn btn-primary">
@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import { mapActions} from "vuex";
+import {mapActions} from "vuex";
 
 export default {
     name: "Login",
@@ -62,7 +62,7 @@ export default {
 
     mounted() {
         if (localStorage.getItem("authToken")) {
-            this.$router.push({ name: "Films" });
+            this.$router.push({name: "Films"});
         }
     },
 
@@ -76,7 +76,7 @@ export default {
                     return true;
                 }
                 this.$swal(res.data.message);
-                this.$router.push({ name: "Films" });
+                this.$router.push({name: "Films"});
             });
         }
     }
