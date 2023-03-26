@@ -81,7 +81,7 @@ class FilmController extends Controller
         if ($request->hasFile('photo') && $request->file('photo')->isValid()) {
             $path = $request->file('photo')->store('public/film-images');
             $path = explode('/', $path);
-            $request->request->add(['photo_path' => $path[2]]);
+            $request->request->add(['photo_path' => 'storage/'. $path[1] .'/'.$path[2]]);
         }
 
         event(new FilmCreated($film = $this->createFilm($request->all())));

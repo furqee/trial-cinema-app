@@ -29,7 +29,7 @@ class FilmFactory extends Factory
             'release_date' => $this->faker->dateTime(),
             'rating' => $this->faker->numberBetween(1, 5),
             'price' => $this->faker->randomNumber(2),
-            'photo' => 'placeholder.png',
+            'photo' => $this->faker->imageUrl(),
         ];
     }
 }
