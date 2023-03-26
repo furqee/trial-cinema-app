@@ -43,7 +43,7 @@ a {
 }
 
 a:hover {
-    color: #e3342f;
+    color: $blue;
 }
 
 .container {
@@ -181,7 +181,7 @@ a:hover {
 
 .info-section label {
     display: block;
-    color: #e3342f;
+    color: $blue;
     margin-bottom: .5em;
     font-size: 9px;
 }
@@ -206,7 +206,7 @@ a:hover {
 }
 
 .checked {
-    color: #e3342f;
+    color: $blue;
 }
 
 .card {
@@ -214,46 +214,46 @@ a:hover {
 }
 
 .bg-dark {
-    background-color: #e3342f !important;
+    background-color: $blue !important;
 }
 
 .form-control:focus {
     color: #495057;
     background-color: #fff;
-    border-color: #e3342f;
+    border-color: $blue;
     outline: 0;
-    box-shadow: 0 0 0 0.2rem #f1c2c1;
+    box-shadow: 0 0 0 0.1rem #bdd4ea;
 }
 
 .btn-primary {
     color: #fff;
-    background-color: #e3342f;
-    border-color: #99221f;
+    background-color: $blue;
+    border-color: $cyan;
 }
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #99221f;
-    border-color: #db4a46;
+    background-color: $darkBlue;
+    border-color: $blue;
 }
 
 .btn-primary:focus, .btn-primary:disabled, .btn-primary.focus {
     color: #fff;
-    background-color: #99221f;
-    border-color: #db4a46;
-    box-shadow: 0 0 0 0.2rem #f1c2c1;
+    background-color: $darkBlue;
+    border-color: $blue;
+    box-shadow: 0 0 0 0.2rem #96b9e0;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #99221f;
-    border-color: #db4a46;
+    background-color: $darkBlue;
+    border-color: $blue;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #99221f;
-    border-color: #db4a46;
+    background-color: $darkBlue;
+    border-color: $blue;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -268,7 +268,7 @@ a:hover {
 .card-header {
     padding: 0.75rem 1.25rem;
     margin-bottom: 0;
-    background-color: #e3342f;
+    background-color: $blue;
     border-bottom: 1px solid rgba(0, 0, 0, 0.125);
     color: white;
 }
@@ -347,7 +347,7 @@ $RED: #FF6347;
                     display: inline-block;
                     padding: 5px;
                     font-size: .7rem;
-                    color: #e3342f;
+                    color: $blue;
                     &:hover {
                         cursor: pointer;
                     }
@@ -368,7 +368,7 @@ $RED: #FF6347;
                 text-align: right;
                 li {
                     &:hover {
-                        color: #72100d;
+                        color: $darkBlue;
                     }
                 }
             }
@@ -377,7 +377,7 @@ $RED: #FF6347;
 
         .user {
             &:hover {
-                color: #e3342f;
+                color: $darkBlue;
                 text-decoration: underline;
             }
         }
