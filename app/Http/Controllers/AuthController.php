@@ -21,7 +21,7 @@ class AuthController extends Controller
      * @param Request $request
      * @return JsonResponse
      */
-    public function register(Request $request) :JsonResponse
+    public function register(Request $request): JsonResponse
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
@@ -70,7 +70,7 @@ class AuthController extends Controller
      * @param Request $request
      * @return JsonResponse
      */
-    public function user(Request $request) :JsonResponse
+    public function user(Request $request): JsonResponse
     {
         if ($request->user()) {
             return response()->json([
@@ -89,7 +89,7 @@ class AuthController extends Controller
      * @param Request $request
      * @return JsonResponse
      */
-    public function login(Request $request) :JsonResponse
+    public function login(Request $request): JsonResponse
     {
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
@@ -108,9 +108,9 @@ class AuthController extends Controller
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             if ($request->user()->email_verified_at) {
                 $data = [
-                    'token' =>  $request->user()->createToken(config('app.name'))->plainTextToken,
-                    'user' =>  $request->user(),
-                    'message' =>  'login successfully.'
+                    'token' => $request->user()->createToken(config('app.name'))->plainTextToken,
+                    'user' => $request->user(),
+                    'message' => 'login successfully.'
                 ];
 
                 return response()->json($data);
@@ -137,7 +137,7 @@ class AuthController extends Controller
      * @param Request $request
      * @return JsonResponse
      */
-    public function logout(Request $request) :JsonResponse
+    public function logout(Request $request): JsonResponse
     {
         if ($request->user()->tokens()->delete()) {
             Auth::guard('web')->logout();
@@ -164,7 +164,7 @@ class AuthController extends Controller
                 'required',
                 Rule::exists('user_verifications')->where(function ($query) use ($uuid) {
                     return $query->where('uuid', $uuid);
-                        //->where('expired_at', '>=', now()->timestamp);
+                    //->where('expired_at', '>=', now()->timestamp);
                 })
             ]
         ]);
@@ -180,7 +180,7 @@ class AuthController extends Controller
             $userVerification = UserVerification::where('user_id', $id)->first();
             $userVerification->delete();
 
-            return redirect(config('app.url').'/login');
+            return redirect(config('app.url') . '/login');
         }
     }
 }
