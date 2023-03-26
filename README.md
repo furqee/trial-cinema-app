@@ -7,6 +7,38 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+Films App for managing films. This small application on Vue.js v2 and Laravel 10.x is just for testing purposes not for production usage.
+
+# Requirements
+```
+PHP ^8.1
+COMPOSER ^V2
+MYSQL ^8.0
+NPM ^6.14
+Node ^14.17
+```
+
+# Installation Instructions
+
+```
+1. composer install
+
+2. cp .env.example .env and set everything accordingly 
+
+3. run php artisan key:generate
+
+4. run php artisan config:cache
+
+5. run php artisan route:cache
+
+5. run php artisan migrate --seed
+
+6. run php artisan storage:link
+
+7. npm install
+
+8. npm run dev OR prod (For Production)
+```
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
