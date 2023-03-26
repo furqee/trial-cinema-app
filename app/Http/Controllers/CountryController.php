@@ -12,7 +12,7 @@ class CountryController extends Controller
      *
      * @return CountryCollection
      */
-    public function countryList(): CountryCollection
+    public function countries(): CountryCollection
     {
         return new CountryCollection(Country::all());
     }
